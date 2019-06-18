@@ -16,9 +16,7 @@ anchor.forEach(a => {
 // Prevent default on the nav items
 const links = document.querySelectorAll(".nav-link");
 links.forEach(link =>
-  link.addEventListener("click", event => {
-    event.preventDefault();
-  })
+  link.addEventListener("click", event => event.preventDefault())
 );
 
 // click
@@ -54,17 +52,16 @@ window.addEventListener(
   "scroll",
   function() {
     const header = document.querySelector(".main-navigation");
-    header.style.backgroundColor = "pink";
+    header.style.backgroundColor = " #17A2B8";
   },
   false
 );
 
 // resize
-window.addEventListener("resize", sizeChanged);
-function sizeChanged(event) {
+window.addEventListener("resize", event => {
   const body = document.querySelector("body");
   body.style.backgroundColor = "#FEF9E7";
-}
+});
 
 // mouseover
 const pictures = document.querySelectorAll(".img-content img");
@@ -74,46 +71,49 @@ pictures.forEach(picture => {
   });
 });
 
-// select
-anchor[0].addEventListener("select", function(event) {
-  event.target.style.fontSize = "3rem";
+// onmouseup
+// const container = document.querySelector(".container");
+// container.addEventListener("selectionchange", event => {
+//     if (document.getSelection()){
+//         event.target.style.fontSize = "5rem";}
+// });
+
+
+// onmousedown
+const footer = document.querySelector(".footer");
+footer.addEventListener("onmousedown", event => {
+    footer.style.color = "white";
 });
 
-// drag
-/* Events fired on the drag target */
 
-// buttons[0].addEventListener("dragstart", function(event) {
-//   event.dataTransfer.setData("Text", event.target.id);
-// });
-
-// document.addEventListener("drag", function(event) {
-//   document.getElementById("demo").innerHTML = "The p element is being dragged";
-// });
-
-// /* Events fired on the drop target */
-// document.addEventListener("dragover", function(event) {
-//   event.preventDefault();
-// });
 
 // dblclick
 const destinationImg = document.querySelector(".content-destination img");
-destinationImg.addEventListener("dblclick", event => {
-  destinationImg.style.border = "5px dotted black";
-});
+destinationImg.addEventListener( "dblclick", event => (destinationImg.style.border = "5px dotted black")
+);
 
 // load
-window.addEventListener("load", event => {
-  //   alert("Page is loaded. Happy browsing!");
-});
+window.addEventListener("load", event => alert("Page is loaded. Happy browsing!"));
 
-// prevent event propagation
+// Prevent event propagation
 const destinationDiv = document.querySelector(".destination");
-destinationDiv.addEventListener("click", event => {
-  console.log("destinationDiv");
-});
+destinationDiv.addEventListener("click", event => console.log("destinationDiv"));
 
 const destinationDivBtn = document.querySelector(".destination .btn");
 destinationDivBtn.addEventListener("click", event => {
   console.log("destinationDivBtn");
   event.stopPropagation();
 });
+
+
+TweenMax.staggerTo(".logo-heading", 1, { rotation: 360, y: 10 }, 0.5);
+TweenMax.staggerTo(".btn", 1, { rotation: 360, y: 10 }, 0.5);
+// focus
+// const noClicks = document.querySelectorAll(".destination btn")
+// noClicks.forEach(button => {
+//     button.addEventListener("focus", disableThis)
+
+//     function disableThis(){
+//         noClicks.disabled = true;
+//     }
+// });
