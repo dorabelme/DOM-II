@@ -1,9 +1,5 @@
 // Your code goes here
 
-// drag / drop;
-// focus;
-// select ?;
-
 // click
 const anchor = document.querySelectorAll("a");
 anchor.forEach(a => (a.style.padding = "10px"));
@@ -71,21 +67,11 @@ pictures.forEach(picture => {
   });
 });
 
-// onmouseup
-// const container = document.querySelector(".container");
-// container.addEventListener("selectionchange", event => {
-//     if (document.getSelection()){
-//         event.target.style.fontSize = "5rem";}
-// });
-
-
 // onmousedown
-const footer = document.querySelector(".footer");
-footer.addEventListener("onmousedown", event => {
+const footer = document.querySelector(".footer p");
+footer.addEventListener("mousedown", event => {
     footer.style.color = "white";
 });
-
-
 
 // dblclick
 const destinationImg = document.querySelector(".content-destination img");
@@ -105,15 +91,5 @@ destinationDivBtn.addEventListener("click", event => {
   event.stopPropagation();
 });
 
-
 TweenMax.staggerTo(".logo-heading", 1, { rotation: 360, y: 10 }, 0.5);
 TweenMax.staggerTo(".btn", 1, { rotation: 360, y: 10 }, 0.5);
-// focus
-// const noClicks = document.querySelectorAll(".destination btn")
-// noClicks.forEach(button => {
-//     button.addEventListener("focus", disableThis)
-
-//     function disableThis(){
-//         noClicks.disabled = true;
-//     }
-// });
