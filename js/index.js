@@ -11,8 +11,7 @@ anchor.forEach(a => {
 
 // Prevent default on the nav items
 const links = document.querySelectorAll(".nav-link");
-links.forEach(link =>
-  link.addEventListener("click", event => event.preventDefault())
+links.forEach(link => link.addEventListener("click", event => event.preventDefault())
 );
 
 // click
@@ -33,7 +32,6 @@ let scale = 1;
 const img = document.querySelector("header img");
 img.addEventListener("wheel", event => {
   event.preventDefault();
-
   scale += event.deltaY * -0.01;
 
   // Restrict scale
@@ -44,9 +42,7 @@ img.addEventListener("wheel", event => {
 });
 
 // scroll
-window.addEventListener(
-  "scroll",
-  function() {
+window.addEventListener("scroll", function() {
     const header = document.querySelector(".main-navigation");
     header.style.backgroundColor = " #17A2B8";
   },
@@ -62,16 +58,12 @@ window.addEventListener("resize", event => {
 // mouseover
 const pictures = document.querySelectorAll(".img-content img");
 pictures.forEach(picture => {
-  picture.addEventListener("mouseover", event => {
-    picture.style.border = "2px solid black";
-  });
+  picture.addEventListener("mouseover", event => picture.style.border = "2px solid black");
 });
 
 // onmousedown
 const footer = document.querySelector(".footer p");
-footer.addEventListener("mousedown", event => {
-    footer.style.color = "white";
-});
+footer.addEventListener("mousedown", event => footer.style.color = "white");
 
 // dblclick
 const destinationImg = document.querySelector(".content-destination img");
@@ -91,5 +83,5 @@ destinationDivBtn.addEventListener("click", event => {
   event.stopPropagation();
 });
 
-TweenMax.staggerTo(".logo-heading", 1, { rotation: 360, y: 10 }, 0.5);
+TweenMax.staggerTo(".logo-heading", 1, {rotation: 360, y: 10 }, 0.5);
 TweenMax.staggerTo(".btn", 1, { rotation: 360, y: 10 }, 0.5);
